@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 require('dotenv');
 const port = 3010;
-const path = require('path');
+const cors = require('cors');
+const bodyParser = require('body-parser');
 const { Configuration, OpenAIApi } = require('openai');
 const configuration = new Configuration({
   organization: 'org-SsEvIFMhp846iNdd79sfbU3l',
@@ -10,7 +11,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-const FRONTEND_URL = '';
+const FRONTEND_URL = 'https://react-9yknhw.stackblitz.io';
 
 app.options('*', cors({ origin: FRONTEND_URL, optionsSuccessStatus: 200 }));
 
